@@ -8,9 +8,9 @@ future scope:- file delete, clear window, run file, etc
 <br/><br/>
 ![GitHub last commit](https://img.shields.io/github/last-commit/AbhilashTUofficial/TU-TextEditor-Java?color=blue&label=Last%20Commit%3A&style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AbhilashTUofficial/TU-TextEditor-Java?label=Repo%20Size%3A&style=for-the-badge)
-|Text editor window| Text editor open file |
-|------|-------|
-|<img src="./Img/TUtextEditor1.png" width="400">|<img src="./Img/TUtextEditor2.png" width="400">|
+|Text editor window| Text editor open file |Text editor font color|
+|------|-------|-------|
+|<img src="./Img/TUtextEditor1.png" width="250">|<img src="./Img/TUtextEditor2.png" width="250">|<img src="./Img/TUtextEditor3.png" width="250">|
 
 ### Directory Structure :
     |-- TuTextEditor
@@ -18,9 +18,7 @@ future scope:- file delete, clear window, run file, etc
     |    |-- src
     |    |   |-- com
     |    |       |-- text_editor
-    |    |           |-- Main.java
     |    |           |-- TextEditor.java
-    |    |           |-- Window.java
     |    |          
     |    |-- file.txt
     |    |
@@ -31,6 +29,8 @@ future scope:- file delete, clear window, run file, etc
     |    |-- java.png
     |    |-- TUtextEditor1.png
     |    |-- TUtextEditor2.png
+    |    |-- TUtextEditor3.png
+
 
 ### Connect with me :  
 <a href="https://twitter.com/Abhilash_TU" target="_blank">

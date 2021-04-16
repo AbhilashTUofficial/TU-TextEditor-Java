@@ -2,13 +2,7 @@ package com.text_editor;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.text.StyledEditorKit;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -27,7 +21,7 @@ public class TextEditor {
 class Logic extends JFrame implements ActionListener, KeyListener {
     JSpinner fontSpinner = new JSpinner();
     JTextArea textArea;
-    Button newFile, delFile, open, close, save, clear, theme, run;
+    Button newFile, delFile, open, close, save, clear, theme, txtColor;
 
 
     Logic() {
@@ -37,7 +31,6 @@ class Logic extends JFrame implements ActionListener, KeyListener {
         JLabel copy, paste, selectAll, cut, undo;
         Font tileFont = new Font("TimesRoman", Font.BOLD, 18);
         JFrame win = new JFrame();
-        Window TextEditor = new Window();
         int winWidth = 800;
         int winHeight = 800;
         int textAreaWidth = winWidth - 40;
@@ -72,7 +65,7 @@ class Logic extends JFrame implements ActionListener, KeyListener {
             close = new Button("Close");
             save = new Button("Save");
             clear = new Button("Clear");
-            run = new Button("Run");
+            txtColor = new Button("Text Color");
             newFile.setBounds(btnX, 0, btnWidth, btnHeight);
             btnX = btnX + btnWidth;
             delFile.setBounds(btnX, 0, btnWidth, btnHeight);
@@ -85,21 +78,21 @@ class Logic extends JFrame implements ActionListener, KeyListener {
             btnX = btnX + btnWidth;
             clear.setBounds(btnX, 0, btnWidth, btnHeight);
             btnX = btnX + btnWidth;
-            run.setBounds(btnX, 0, btnWidth, btnHeight);
+            txtColor.setBounds(btnX, 0, btnWidth, btnHeight);
             newFile.addActionListener(this);
             delFile.addActionListener(this);
             open.addActionListener(this);
             close.addActionListener(this);
             save.addActionListener(this);
             clear.addActionListener(this);
-            run.addActionListener(this);
+            txtColor.addActionListener(this);
             win.add(newFile);
             win.add(delFile);
             win.add(open);
             win.add(close);
             win.add(save);
             win.add(clear);
-            win.add(run);
+            win.add(txtColor);
             System.out.println("Keybinding : Successful");
         } catch (Exception e) {
             System.out.println("Error while keybinding");
@@ -215,6 +208,15 @@ class Logic extends JFrame implements ActionListener, KeyListener {
                     fileOut.close();
                 }
             }
+        }
+        if(e.getSource()==clear){
+            textArea.setText("");
+        }
+        if(e.getSource()==txtColor){
+            JColorChooser colorChooser=new JColorChooser();
+
+            Color color=JColorChooser.showDialog(null,"Pick the color",Color.white);
+            textArea.setForeground(color);
         }
     }
 
